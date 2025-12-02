@@ -1,0 +1,224 @@
+/* Main container */
+.main {
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+}
+
+/* Navigation bar */
+.main .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 20px;
+    color: #585858;
+}
+
+.main .nav img {
+    width: 40px;
+    border-radius: 50px;
+}
+
+/* Main container for content */
+.main .main-container {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Greeting section */
+.main .greet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    font-size: 56px;
+    color: #c4c7c5;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.main .greet span {
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Message container */
+.message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+/* Style for the user's prompt */
+.message-text.user {
+    color: #000;
+    text-align: right;
+    background-color: #f0f4f9;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50px 0px 50px 50px;
+    max-width: 80%;
+    align-self: flex-end;
+    display: inline-block; /* Align user prompt to the right */
+}
+
+/* Style for the Gemini response */
+.message-text.gemini {
+    color: #000;
+    text-align: left;
+    background-color: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 0px 50px 50px 50px;
+    max-width: 80%;
+    align-self: flex-start; /* Align Gemini's response to the left */
+    display: inline-flex; /* Align logo and response in a row */
+    gap: 10px; /* Space between logo and text */
+}
+
+/* Gemini logo styling */
+.gemini-logo {
+    width: 25px;
+    height: 25px;
+}
+
+/* Loading dots style */
+.loading-dots {
+    font-size: 20px;
+    color: #888;
+}
+
+/* Style for the result container */
+.result {
+    padding: 15px;
+    border-radius: 10px;
+    margin:auto;
+    
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-y: scroll;
+    max-height: 65vh;
+    
+}
+.result::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* Input box and button styles */
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f0f4f9;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.search-box input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.search-box img {
+    width: 24px;
+    cursor: pointer;
+}
+
+.search-box div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/* Loader Container */
+.loader {
+    position: relative;
+    width: 30px; /* Size of the rotating circle */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+/* Blue circle animation */
+.loader::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #3498db; /* Blue color for the circle */
+    border-radius: 50%;
+    border-top: 2px solid transparent; /* Make the top of the circle transparent */
+    animation: rotate-circle 1s linear infinite;
+}
+
+/* Gemini logo in the center */
+.loader .gemini-logo {
+    position: absolute;
+    width: 25px; /* Size of the Gemini logo */
+    height: 25px;
+    z-index: 1; /* Ensure logo is above the circle */
+}
+
+/* Keyframes for rotating circle */
+@keyframes rotate-circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Bottom info text */
+.main .bottom-info {
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* Bottom section styles */
+.main-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+    .main-bottom input {
+        flex: none;
+        width: 150px;
+    }
+
+    .main-bottom img {
+        width: 20px;
+    }
+
+    .search-box {
+        padding: 5px 10px;
+    }
+
+    .search-box div {
+        gap: 5px;
+    }
+}
